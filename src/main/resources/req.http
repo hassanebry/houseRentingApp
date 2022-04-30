@@ -1,0 +1,77 @@
+POST http://localhost:8080/api/v1/house-renting/user
+Content-Type: application/json
+
+{
+  "name": "Lamar",
+  "email": "lamar@gmail.com",
+  "password": "password",
+  "role": "owner"
+}
+
+###
+GET http://localhost:8080/api/v1/house-renting/user
+
+###
+POST http://localhost:8080/api/v1/house-renting/bien
+Content-Type: application/json
+
+{
+  "typeBien": "APPARTEMENT",
+  "adresse": {
+    "numRue": 1,
+    "rue": "Rue de la Colinière",
+    "codepostal": 44300,
+    "commune": "Nantes"
+  },
+  "surface": 100,
+  "caracteristique": {
+    "anneeConstruction": 2022,
+    "balcon": true,
+    "cave": true,
+    "ascenseur": true,
+    "gardien": true,
+    "energie": "A",
+    "exposition": "SUD"
+  },
+  "userId": 1
+}
+
+###
+POST http://localhost:8080/api/v1/house-renting/offre
+Content-Type: application/json
+
+{
+  "prix": 100,
+  "description": "description label",
+  "disponibleLe": "2022-06-01",
+  "idBienConcerne": 1,
+  "idUtilisateur": 1
+}
+
+###
+GET http://localhost:8080/api/v1/house-renting/offre
+
+###
+GET http://localhost:8080/api/v1/house-renting/offre/1
+
+###
+POST http://localhost:8080/api/v1/house-renting/candidature
+Content-Type: application/json
+
+{
+  "status": "accepte",
+  "idUtilisateur": 1,
+  "idOffre": 1
+}
+
+###
+GET http://localhost:8080/api/v1/house-renting/candidature
+
+###
+
+GET http://localhost:8080/api/v1/house-renting/candidature/user/1
+
+###
+GET http://localhost:8080/api/v1/house-renting/candidature/1
+###
+DELETE http://localhost:8080/api/v1/house-renting/candidature/1
